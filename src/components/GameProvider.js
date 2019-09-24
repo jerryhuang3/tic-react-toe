@@ -2,29 +2,24 @@ import React, { useState } from "react";
 import GameContext from "./GameContext";
 
 const GameProvider = props => {
-  const [gameStarted, setGameStarted] = useState(false);
-  const [winner, setWinner] = useState("");
+  const [winner, setWinner] = useState(false);
 
-  const [playerOne, setPlayerOne] = useState("");
-  const [playerTwo, setPlayerTwo] = useState("");
+  const [playerOneName, setPlayerOneName] = useState("");
+  const [playerTwoName, setPlayerTwoName] = useState("");
 
   return (
     <GameContext.Provider
       value={{
-        p1: playerOne,
-        p2: playerTwo,
+        player1: playerOneName,
+        player2: playerTwoName,
         winner: winner,
-        game: gameStarted,
-        gameStarted: bool => {
-          setGameStarted(bool);
+        setPlayerOneName: name => {
+          setPlayerOneName(name);
         },
-        playerOne: name => {
-          setPlayerOne(name);
+        setPlayerTwoName: name => {
+          setPlayerTwoName(name);
         },
-        playerTwo: name => {
-          setPlayerTwo(name);
-        },
-        winner: player => {
+      	setWinner: player => {
           setWinner(player);
         }
       }}
