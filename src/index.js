@@ -1,14 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
 import "./styles/styles.scss";
-import Board from "./components/Board";
-
-const App = () => {
-  return (
-		<div className={'container'}>
-      <Board />
-			</div>
-  );
-};
+import App from "./components/App";
 
 render(<App />, document.getElementById("root"));
