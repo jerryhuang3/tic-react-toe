@@ -6,8 +6,6 @@ const GameProvider = props => {
   const [playerOneTurn, setPlayerOneTurn] = useState(true);
   const [p1, setPlayerOneName] = useState("");
   const [p2, setPlayerTwoName] = useState("");
-  const [p1moves, setP1moves] = useState([]);
-  const [p2moves, setP2moves] = useState([]);
   const [turn, setTurn] = useState(1);
 
   if (winner) {
@@ -19,8 +17,6 @@ const GameProvider = props => {
       value={{
         player1: p1,
         player2: p2,
-        p1moves: p1moves,
-        p2moves: p2moves,
         turn: turn,
         playerOneTurn: playerOneTurn,
         winner: winner,
@@ -32,11 +28,6 @@ const GameProvider = props => {
         },
         setWinner: player => {
           setWinner(player);
-        },
-        addMove: move => {
-          playerOneTurn
-            ? setP1moves([...p1moves, move])
-            : setP2moves([...p2moves, move]);
         },
         nextTurn: add => {
           setTurn(add);

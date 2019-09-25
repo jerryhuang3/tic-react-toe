@@ -1,6 +1,4 @@
-const checkWin = turn => {
-  console.log("turn", turn);
-
+const checkWin = () => {
   const winConditions = [
     [1, 2, 3],
     [4, 5, 6],
@@ -20,7 +18,6 @@ const checkWin = turn => {
       return true;
     }
   }
-
   return false;
 };
 

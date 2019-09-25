@@ -9,7 +9,6 @@ const Item = props => {
   const [selected, setSelected] = useState(false);
 
   const onClick = evt => {
-    game.addMove(parseInt(evt.target.id));
     evt.target.value = game.playerOneTurn ? "💩" : "🎂"; // set box value
 
     if (game.turn > 4) {
