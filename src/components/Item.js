@@ -9,7 +9,7 @@ const Item = props => {
   const [selected, setSelected] = useState(false);
 
   const onClick = evt => {
-    evt.target.value = game.playerOneTurn ? "💩" : "🎂"; // set box value
+    evt.target.value = game.playerOneTurn ? "🍎" : "🥨"; // set box value
 
     if (game.turn > 4) {
       const gameOver = checkWin(game.turn);
@@ -20,7 +20,7 @@ const Item = props => {
 
     evt.target.setAttribute("disabled", "disabled");
     setSelected(!selected);
-    game.playerOneTurn ? setMark("💩") : setMark("🎂"); // set box display
+    game.playerOneTurn ? setMark("🍎") : setMark("🥨"); // set box display
     game.setPlayerOneTurn();
     const addTurn = game.turn + 1;
     game.nextTurn(addTurn);

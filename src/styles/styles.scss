@@ -2,6 +2,8 @@ body {
   font-family: Andale Mono;
 
   .container {
+    min-height: 600px;
+    min-width: 800px;
     height: 100vh;
     width: 100vw;
     display: grid;
@@ -145,7 +147,7 @@ body {
       .board-item {
         button {
           text-align: center;
-          font-size: 40px;
+          font-size: 60px;
           width: 100%;
           height: 100%;
         }
@@ -177,12 +179,14 @@ body {
 @media screen and (max-width: 500px) {
   body {
     .container {
+      grid-template-columns: 1fr 4fr 4fr 4fr 1fr;
+      min-width: 200px;
       .start {
         .player-one {
           grid-area: 2 / 1 / span 2 / span 3;
           justify-self: start;
           align-self: start;
-          margin-left: 0px;
+          margin-left: 40px;
           font-size: 25px;
           input {
             height: 27px;
@@ -193,6 +197,16 @@ body {
             outline: none;
           }
         }
+      }
+      .left-side {
+        grid-area: 5 / 3 / span 1 / span 1;
+        align-self: center;
+        justify-self: center;
+      }
+      .right-side {
+        grid-area: 5 / 3 / span 1 / span 1;
+        align-self: end;
+        justify-self: center;
       }
     }
   }

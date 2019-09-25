@@ -4,7 +4,6 @@ export default React.createContext({
   turn: 1,
   player1: "",
   player2: "",
-  turn: Number,
   playerOneTurn: true,
   winner: false,
   setPlayerOneName: name => {
