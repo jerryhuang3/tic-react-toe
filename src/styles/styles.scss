@@ -76,11 +76,13 @@ body {
         align-self: start;
         letter-spacing: 2px;
       }
+
       .player-one {
         grid-area: 2 / 2 / span 1 / span 1;
-        justify-self: start;
-        align-self: start;
+        justify-self: center;
+        align-items: center;
         font-size: 25px;
+        margin-left: 60px;
         input {
           height: 27px;
           width: 250px;
@@ -167,6 +169,30 @@ body {
 
       .color {
         background-color: rgb(213, 213, 255);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    .container {
+      .start {
+        .player-one {
+          grid-area: 2 / 1 / span 2 / span 3;
+          justify-self: start;
+          align-self: start;
+          margin-left: 0px;
+          font-size: 25px;
+          input {
+            height: 27px;
+            width: 400px;
+            font-size: 25px;
+            margin-top: 10px;
+            border: none;
+            outline: none;
+          }
+        }
       }
     }
   }
