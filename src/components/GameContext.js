@@ -6,6 +6,7 @@ export default React.createContext({
   player2: "",
   p1moves: [],
   p2moves: [],
+  turn: turn,
   playerOneTurn: true,
   winner: false,
   setPlayerOneName: name => {
@@ -22,7 +23,7 @@ export default React.createContext({
       ? setP1moves([...p1moves, move])
       : setP2moves([...p2moves, move]);
   },
-  addTurn: add => {
-    setTurn(turn++);
+  nextTurn: add => {
+    setTurn(add);
   }
 });

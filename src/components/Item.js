@@ -15,9 +15,6 @@ const Item = props => {
     if (game.turn > 4) {
       const gameOver = checkWin(game.turn);
       if (gameOver) {
-        console.log(
-          `${game.playerOneTurn ? game.player1 : game.player2} wins!!!!!!`
-        );
         game.setWinner(true);
       }
     }
@@ -28,7 +25,7 @@ const Item = props => {
     game.setPlayerOneTurn();
     const addTurn = game.turn + 1;
     game.nextTurn(addTurn);
-    console.log("changed player")
+    console.log("changed player");
   };
 
   return (

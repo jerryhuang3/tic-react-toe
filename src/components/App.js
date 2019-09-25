@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import GameProvider from "./GameProvider";
 import Setup from "./Setup";
 import Board from "./Board";
 import Details from "./Details";
+import End from "./End";
 
-const App = props => {
+const App = () => {
   const [gameStarted, setGameStarted] = useState(false);
   const [endGame, setEndGame] = useState(false);
 
@@ -18,8 +19,8 @@ const App = props => {
     setEndGame(bool);
   };
 
-  let component;
-  if (gameStarted) {
+  let component = "";
+  if (!gameStarted) {
     component = <Setup init={start} />;
   }
   if (gameStarted && !endGame) {
@@ -31,13 +32,12 @@ const App = props => {
     );
   }
   if (gameStarted && endGame) {
+    component = <End />;
   }
 
   return (
     <GameProvider winner={end}>
-      <div className={"container"}>
-        {component}
-      </div>
+      <div className={"container"}>{component}</div>
     </GameProvider>
   );
 };

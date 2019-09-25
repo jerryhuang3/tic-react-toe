@@ -7,6 +7,21 @@ body {
     grid-template-rows: repeat(5, 1fr);
     // justify-items: space-around;
     // align-items: space-around;
+    .end {
+      font-family: Andale Mono;
+      grid-area: 2 / 2 / span 3 / span 3;
+      display: grid;
+      height: 100%;
+      align-items: center;
+      justify-items: center;
+      h1 {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 60px;
+        animation: expand 0.75s infinite;
+      }
+    }
 
     .start {
       font-family: Andale Mono;
@@ -66,6 +81,15 @@ body {
           border-color: white;
         }
       }
+      @keyframes expand {
+        0%,
+        100% {
+          font-size: 60px;
+        }
+        50% {
+          font-size: 80px;
+        }
+      }
     }
 
     .header {
@@ -73,14 +97,14 @@ body {
       align-self: center;
       justify-self: center;
       // border: solid;
-		}
-		.left-side {
+    }
+    .left-side {
       grid-area: 1 / 1 / span 5 / span 1;
       align-self: center;
       justify-self: center;
       // border: solid;
-		}
-		.right-side {
+    }
+    .right-side {
       grid-area: 1 / 5 / span 5 / span 1;
       align-self: center;
       justify-self: center;

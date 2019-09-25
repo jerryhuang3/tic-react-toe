@@ -8,18 +8,17 @@ const GameProvider = props => {
   const [p2, setPlayerTwoName] = useState("");
   const [p1moves, setP1moves] = useState([]);
   const [p2moves, setP2moves] = useState([]);
-	const [turn, setTurn] = useState(1);
+  const [turn, setTurn] = useState(1);
 
-	if (winner) {
-		props.winner(winner);
-	}
-	
+  if (winner) {
+    props.winner(winner);
+  }
 
   return (
     <GameContext.Provider
       value={{
-        player1: "jerry",
-        player2: "poop",
+        player1: p1,
+        player2: p2,
         p1moves: p1moves,
         p2moves: p2moves,
         turn: turn,
