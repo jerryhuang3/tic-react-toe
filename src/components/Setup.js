@@ -14,6 +14,7 @@ const Setup = props => {
 
   const saveName = e => {
     e.preventDefault();
+
     setName("");
     player1
       ? (game.setPlayerName(name), game.setPlayerOneTurn(), startGame())
@@ -29,42 +30,47 @@ const Setup = props => {
   };
 
   return (
-    <div className={"start"}>
-      {start ? (
-        <React.Fragment>
-          {player1 ? (
-            <form className={"player-one"} onSubmit={saveName}>
-              <label>
-                Player Two:
-                <input
-                  placeholder={"enter your name"}
-                  autoFocus={"autofocus"}
-                  onChange={typeName}
-                  value={name}
-                ></input>
-              </label>
-            </form>
-          ) : (
-            <form className={"player-one"} onSubmit={saveName}>
-              <label>
-                Player One:
-                <input
-                  placeholder={"enter your name"}
-                  autoFocus={"autofocus"}
-                  onChange={typeName}
-                  value={name}
-                ></input>
-              </label>
-            </form>
-          )}
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          <div className={"start-text"}>Welcome to the game!</div>
-          <button onClick={onStartClick}>START</button>
-        </React.Fragment>
-      )}
-    </div>
+    <React.Fragment>
+      <div className={"title"}>tic tac toe</div>
+      <div className={"start"}>
+        {start ? (
+          <React.Fragment>
+            {player1 ? (
+              <form className={"player-one"} onSubmit={saveName}>
+                <label>
+                  Player Two:
+                  <input
+                    maxLength={"12"}
+                    placeholder={"enter your name"}
+                    autoFocus={"autofocus"}
+                    onChange={typeName}
+                    value={name}
+                  ></input>
+                </label>
+              </form>
+            ) : (
+              <form className={"player-one"} onSubmit={saveName}>
+                <label>
+                  Player One:
+                  <input
+                    maxLength={"12"}
+                    placeholder={"enter your name"}
+                    autoFocus={"autofocus"}
+                    onChange={typeName}
+                    value={name}
+                  ></input>
+                </label>
+              </form>
+            )}
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <div className={"start-text"}>Welcome to the game!</div>
+            <button onClick={onStartClick}>START</button>
+          </React.Fragment>
+        )}
+      </div>
+    </React.Fragment>
   );
 };
 

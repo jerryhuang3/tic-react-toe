@@ -1,120 +1,134 @@
 body {
+  font-family: Andale Mono;
+
   .container {
     height: 100vh;
     width: 100vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    // justify-items: space-around;
-    // align-items: space-around;
+
     .end {
-      font-family: Andale Mono;
       grid-area: 2 / 2 / span 3 / span 3;
       display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
       height: 100%;
       align-items: center;
       justify-items: center;
       h1 {
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        font-size: 60px;
-        animation: expand 0.75s infinite;
+        grid-area: 1 / 1 / span 2 / span 3;
+        text-align: center;
+        font-size: 40px;
+        animation: expand 1s infinite;
+      }
+      button {
+        grid-area: 2 / 2 / span 1 / span 1;
+        align-self: end;
+        color: white;
+        justify-self: center;
+        font-size: 20px;
+        width: 150px;
+        height: 40px;
+        border: 1px solid #3455db;
+        background-color: #3455db;
+        border-radius: 3px;
       }
     }
-
+    @keyframes expand {
+      0%,
+      100% {
+        font-size: 40px;
+      }
+      50% {
+        font-size: 60px;
+      }
+    }
+    .title {
+      grid-area: 1 / 1 / span 1 / span 5;
+      justify-self: center;
+      align-self: end;
+      font-size: 40px;
+    }
     .start {
-      font-family: Andale Mono;
-      grid-area: 3 / 3 / span 1 / span 1;
+      grid-area: 2 / 2 / span 3 / span 3;
       display: grid;
       height: 100%;
-      grid-template-columns: auto;
-      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
       align-self: center;
-
       button {
-        grid-row: 2;
+        grid-area: 2 / 2 / span 1 / span 1;
+        color: white;
         justify-self: center;
         align-self: center;
         font-size: 20px;
         width: 100px;
         height: 40px;
+        border: 1px solid #3455db;
+        background-color: #3455db;
+        border-radius: 3px;
       }
       .start-text {
-        display: inline-block;
-        font-size: 30px;
-        white-space: nowrap;
+        grid-area: 2 / 1 / span 1 / span 3;
+        font-size: 20px;
         text-align: center;
-        align-self: center;
-        // overflow: hidden;
+        align-self: start;
         letter-spacing: 2px;
-        // border-right: 2px solid;
       }
       .player-one {
-        grid-row: 1 / span 2;
-        justify-self: center;
-        align-self: center;
+        grid-area: 2 / 2 / span 1 / span 1;
+        justify-self: start;
+        align-self: start;
         font-size: 25px;
-        letter-spacing: 2px;
         input {
           height: 27px;
-          font-size: 20px;
+          width: 250px;
+          font-size: 25px;
+          margin-top: 10px;
           border: none;
           outline: none;
-        }
-      }
-
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
-      @keyframes cursor {
-        from,
-        to {
-          border-color: black;
-        }
-        50% {
-          border-color: white;
-        }
-      }
-      @keyframes expand {
-        0%,
-        100% {
-          font-size: 60px;
-        }
-        50% {
-          font-size: 80px;
         }
       }
     }
 
     .header {
       grid-area: 1 / 1 / span 1 / span 5;
-      align-self: center;
+      align-self: end;
       justify-self: center;
-      // border: solid;
+      h1 {
+        text-align: center;
+      }
+      button {
+        align-self: center;
+        color: white;
+        margin-left: 30px;
+        font-size: 20px;
+        width: 150px;
+        height: 40px;
+        border: 1px solid #3455db;
+        background-color: #3455db;
+        border-radius: 3px;
+      }
     }
     .left-side {
       grid-area: 1 / 1 / span 5 / span 1;
       align-self: center;
       justify-self: center;
-      // border: solid;
     }
     .right-side {
       grid-area: 1 / 5 / span 5 / span 1;
       align-self: center;
       justify-self: center;
-      // border: solid;
     }
 
     .footer {
       grid-area: 5 / 1 / span 1 / span 5;
-      align-self: center;
+      align-self: start;
       justify-self: center;
+      h2 {
+        text-align: center;
+      }
     }
 
     .board {
@@ -129,7 +143,7 @@ body {
       .board-item {
         button {
           text-align: center;
-          font-size: 100px;
+          font-size: 40px;
           width: 100%;
           height: 100%;
         }
@@ -155,11 +169,5 @@ body {
         background-color: rgb(213, 213, 255);
       }
     }
-    // .board-item {
-    // grid-area: 2 / 2 / span 3 / span 3;
-    // justify-content: space-around;
-    // justify-items: space-between;
-    // justify-self: space-around;
-    // }
   }
 }
