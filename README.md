@@ -7,7 +7,9 @@ This was an interesting experience on practicing with React's hooks and context 
 ## Getting started
 
 -Clone the repository to your local folder.
+
 -Run `npm i`
+
 -Run `npm start` to start localhost server at port 3000.
 
 OR
